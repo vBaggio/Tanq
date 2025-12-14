@@ -103,9 +103,17 @@
     <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
         <DCC_RemoteDebug>false</DCC_RemoteDebug>
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
+        <DCC_ExeOutput>.\bin\</DCC_ExeOutput>
+        <DCC_DcuOutput>.\dcu\</DCC_DcuOutput>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Locale>1033</VerInfo_Locale>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win64)'!=''">
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
+        <DCC_ExeOutput>.\bin\</DCC_ExeOutput>
+        <DCC_DcuOutput>.\dcu\</DCC_DcuOutput>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Locale>1033</VerInfo_Locale>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2)'!=''">
         <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
@@ -123,10 +131,65 @@
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
+        <DCCReference Include="src\Tanq.View.Interfaces.pas"/>
+        <DCCReference Include="src\Tanq.View.Factory.pas"/>
         <DCCReference Include="src\Tanq.View.Main.pas">
             <Form>frmMain</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="src\Tanq.View.Welcome.pas">
+            <Form>frmWelcome</Form>
+        </DCCReference>
+        <DCCReference Include="src\Tanq.View.Abastecimento.pas">
+            <Form>frmAbastecimento</Form>
+        </DCCReference>
+        <DCCReference Include="src\Tanq.View.Bombas.pas">
+            <Form>frmBombas</Form>
+        </DCCReference>
+        <DCCReference Include="src\Tanq.View.BombaEdit.pas">
+            <Form>frmBombaEdit</Form>
+        </DCCReference>
+        <DCCReference Include="src\Tanq.View.Reposicao.pas">
+            <Form>frmReposicao</Form>
+        </DCCReference>
+        <DCCReference Include="src\Tanq.View.Relatorio.pas">
+            <Form>frmRelatorio</Form>
+        </DCCReference>
+        <DCCReference Include="src\Tanq.View.Relatorio.Abastecimento.pas">
+            <Form>frmRelAbastecimento</Form>
+        </DCCReference>
+        <DCCReference Include="src\Tanq.Controller.Abastecimento.pas"/>
+        <DCCReference Include="src\Tanq.Controller.Reposicao.pas"/>
+        <DCCReference Include="src\Tanq.Controller.Bombas.pas"/>
+        <DCCReference Include="src\Tanq.Controller.Relatorio.pas"/>
+        <DCCReference Include="src\Tanq.Model.Config.pas"/>
+        <DCCReference Include="src\Tanq.Model.Conn.Interfaces.pas"/>
+        <DCCReference Include="src\Tanq.Model.Conn.Factory.pas"/>
+        <DCCReference Include="src\Tanq.Model.Conn.Firebird.pas"/>
+        <DCCReference Include="src\Tanq.Model.Entity.Usuario.pas"/>
+        <DCCReference Include="src\Tanq.Model.Entity.Combustivel.pas"/>
+        <DCCReference Include="src\Tanq.Model.Entity.Tanque.pas"/>
+        <DCCReference Include="src\Tanq.Model.Entity.Bomba.pas"/>
+        <DCCReference Include="src\Tanq.Model.Entity.Abastecimento.pas"/>
+        <DCCReference Include="src\Tanq.Model.Entity.Reposicao.pas"/>
+        <DCCReference Include="src\Tanq.Model.Entity.TanqueMovimento.pas"/>
+        <DCCReference Include="src\Tanq.Model.Repository.Interfaces.pas"/>
+        <DCCReference Include="src\Tanq.Model.Repository.Factory.pas"/>
+        <DCCReference Include="src\Tanq.Model.Repository.DTOs.pas"/>
+        <DCCReference Include="src\Tanq.Model.Repository.Combustivel.pas"/>
+        <DCCReference Include="src\Tanq.Model.Repository.Bomba.pas"/>
+        <DCCReference Include="src\Tanq.Model.Repository.Tanque.pas"/>
+        <DCCReference Include="src\Tanq.Model.Repository.Abastecimento.pas"/>
+        <DCCReference Include="src\Tanq.Model.Repository.Reposicao.pas"/>
+        <DCCReference Include="src\Tanq.Model.Repository.TanqueMovimento.pas"/>
+        <DCCReference Include="src\Tanq.Model.Repository.Relatorio.pas"/>
+        <DCCReference Include="src\Tanq.Model.Service.Interfaces.pas"/>
+        <DCCReference Include="src\Tanq.Model.Service.Factory.pas"/>
+        <DCCReference Include="src\Tanq.Model.Service.ConfigLoader.pas"/>
+        <DCCReference Include="src\Tanq.Model.Service.Abastecimento.pas"/>
+        <DCCReference Include="src\Tanq.Model.Service.Reposicao.pas"/>
+        <DCCReference Include="src\Tanq.Model.Service.TanqueMovimento.pas"/>
+        <DCCReference Include="src\Tanq.Model.Service.Bomba.pas"/>
+        <DCCReference Include="src\Tanq.Model.Service.Relatorio.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
@@ -147,9 +210,14 @@
                 <Source>
                     <Source Name="MainSource">Tanq.dpr</Source>
                 </Source>
+                <Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k290.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dclofficexp290.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+                    <Excluded_Packages Name="C:\Lib\fortesreport-ce-master\Binary\LibD29\dclfrce.bpl">File C:\Lib\fortesreport-ce-master\Binary\LibD29\dclfrce.bpl not found</Excluded_Packages>
+                </Excluded_Packages>
             </Delphi.Personality>
             <Deployment Version="4">
-                <DeployFile LocalName="Win32\Debug\Tanq.exe" Configuration="Debug" Class="ProjectOutput">
+                <DeployFile LocalName="bin\Tanq.exe" Configuration="Debug" Class="ProjectOutput">
                     <Platform Name="Win32">
                         <RemoteName>Tanq.exe</RemoteName>
                         <Overwrite>true</Overwrite>
@@ -1110,6 +1178,9 @@
                 <Platform value="Win32">True</Platform>
                 <Platform value="Win64">True</Platform>
             </Platforms>
+            <UnitTesting>
+                <TestProjectName>D:\dev\delphi\projects\Tanq\TanqTests.dproj</TestProjectName>
+            </UnitTesting>
         </BorlandProject>
         <ProjectFileVersion>12</ProjectFileVersion>
     </ProjectExtensions>

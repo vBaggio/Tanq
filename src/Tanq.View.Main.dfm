@@ -4,8 +4,8 @@ object frmMain: TfrmMain
   Caption = 
     'Tanq - Gerenciar abastecimentos e tanques de combust'#237'veis do pos' +
     'to ABC'
-  ClientHeight = 415
-  ClientWidth = 733
+  ClientHeight = 580
+  ClientWidth = 882
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -13,5 +13,188 @@ object frmMain: TfrmMain
   Font.Name = 'Segoe UI'
   Font.Style = []
   Position = poScreenCenter
+  OnClose = FormClose
+  OnCreate = FormCreate
   TextHeight = 15
+  object pnlContent: TPanel
+    Left = 0
+    Top = 49
+    Width = 882
+    Height = 531
+    Margins.Left = 0
+    Margins.Top = 0
+    Margins.Right = 0
+    Margins.Bottom = 0
+    Align = alClient
+    BevelOuter = bvNone
+    Color = clWhite
+    ParentBackground = False
+    TabOrder = 0
+    object pnlContentHost: TPanel
+      Left = 0
+      Top = 0
+      Width = 882
+      Height = 531
+      Margins.Left = 5
+      Margins.Top = 10
+      Margins.Right = 5
+      Margins.Bottom = 5
+      Align = alClient
+      BevelOuter = bvNone
+      Color = clWhite
+      Padding.Left = 15
+      Padding.Top = 15
+      Padding.Right = 15
+      Padding.Bottom = 15
+      ParentBackground = False
+      TabOrder = 0
+    end
+  end
+  object pnlNavBar: TPanel
+    Left = 0
+    Top = 0
+    Width = 882
+    Height = 49
+    Align = alTop
+    BevelOuter = bvNone
+    Color = 12615680
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Roboto'
+    Font.Style = []
+    ParentBackground = False
+    ParentFont = False
+    TabOrder = 1
+    object lblTitle: TLabel
+      AlignWithMargins = True
+      Left = 10
+      Top = 4
+      Width = 63
+      Height = 41
+      Margins.Left = 10
+      Margins.Top = 4
+      Margins.Right = 4
+      Margins.Bottom = 4
+      Align = alLeft
+      Alignment = taCenter
+      AutoSize = False
+      Caption = 'Tanq'
+      Color = clBlack
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -24
+      Font.Name = 'Yu Gothic'
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+      Transparent = True
+      Layout = tlCenter
+      OnClick = btnBombasClick
+    end
+    object pnlNavButtons: TPanel
+      AlignWithMargins = True
+      Left = 232
+      Top = 0
+      Width = 650
+      Height = 49
+      Margins.Left = 0
+      Margins.Top = 0
+      Margins.Right = 0
+      Margins.Bottom = 0
+      Align = alRight
+      BevelOuter = bvNone
+      Color = 12615680
+      Padding.Left = 5
+      Padding.Right = 5
+      ParentBackground = False
+      TabOrder = 0
+      object btnBombas: TSpeedButton
+        AlignWithMargins = True
+        Left = 13
+        Top = 3
+        Width = 149
+        Height = 43
+        Align = alRight
+        Caption = 'Bombas'
+        Flat = True
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWhite
+        Font.Height = -15
+        Font.Name = 'Roboto'
+        Font.Style = []
+        ParentFont = False
+        OnClick = btnBombasClick
+        OnMouseEnter = btnBombasMouseEnter
+        OnMouseLeave = btnBombasMouseLeave
+        ExplicitLeft = 56
+        ExplicitTop = 0
+        ExplicitHeight = 49
+      end
+      object btnReposicao: TSpeedButton
+        AlignWithMargins = True
+        Left = 338
+        Top = 3
+        Width = 149
+        Height = 43
+        Align = alRight
+        Caption = 'Reposi'#231#227'o'
+        Flat = True
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWhite
+        Font.Height = -15
+        Font.Name = 'Roboto'
+        Font.Style = []
+        ParentFont = False
+        OnClick = btnReposicaoClick
+        OnMouseEnter = btnBombasMouseEnter
+        OnMouseLeave = btnBombasMouseLeave
+        ExplicitLeft = 279
+        ExplicitTop = -3
+        ExplicitHeight = 49
+      end
+      object btnAbastecimento: TSpeedButton
+        AlignWithMargins = True
+        Left = 168
+        Top = 3
+        Width = 164
+        Height = 43
+        Align = alRight
+        Caption = 'Abastecimento'
+        Flat = True
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWhite
+        Font.Height = -15
+        Font.Name = 'Roboto'
+        Font.Style = []
+        ParentFont = False
+        OnClick = btnAbastecimentoClick
+        OnMouseEnter = btnBombasMouseEnter
+        OnMouseLeave = btnBombasMouseLeave
+        ExplicitLeft = 128
+        ExplicitTop = 0
+        ExplicitHeight = 49
+      end
+      object btlRelatorio: TSpeedButton
+        AlignWithMargins = True
+        Left = 493
+        Top = 3
+        Width = 149
+        Height = 43
+        Align = alRight
+        Caption = 'Relat'#243'rio'
+        Flat = True
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWhite
+        Font.Height = -15
+        Font.Name = 'Roboto'
+        Font.Style = []
+        ParentFont = False
+        OnClick = btlRelatorioClick
+        OnMouseEnter = btnBombasMouseEnter
+        OnMouseLeave = btnBombasMouseLeave
+        ExplicitLeft = 488
+      end
+    end
+  end
 end

@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{37457CAE-AC59-498C-817B-FFF52C9AA772}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="Tanq.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="TanqTests.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="Tanq">
+        <MSBuild Projects="Tanq.dproj"/>
+    </Target>
+    <Target Name="Tanq:Clean">
+        <MSBuild Projects="Tanq.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Tanq:Make">
+        <MSBuild Projects="Tanq.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TanqTests">
+        <MSBuild Projects="TanqTests.dproj"/>
+    </Target>
+    <Target Name="TanqTests:Clean">
+        <MSBuild Projects="TanqTests.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TanqTests:Make">
+        <MSBuild Projects="TanqTests.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="Tanq;TanqTests"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="Tanq:Clean;TanqTests:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="Tanq:Make;TanqTests:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
