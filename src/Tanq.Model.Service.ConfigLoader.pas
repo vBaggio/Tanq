@@ -106,7 +106,6 @@ begin
 end;
 
 initialization
-  ReloadConfig;
 
 finalization
   if Assigned(GConfig) then

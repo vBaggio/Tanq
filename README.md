@@ -8,7 +8,7 @@ Aplicação VCL desenvolvida para o desafio técnico descrito em [`Avaliação -
 
 | Pasta/Arquivo | Descrição |
 | --- | --- |
-| `bin/` | Entrega pronta para uso (`Tanq.exe`, `Tanq.ini`, `TANQ.FDB`, `fbclient.dll` esperado no mesmo diretório). |
+| `bin/` | Binários prontos para uso `Tanq.exe`, `Tanq.ini`, `TANQ.FDB`, `fbclient.dll`, `TanqTests.exe` |
 | `src/` | Código-fonte da aplicação (views VCL, controllers, services, repositories, entidades e conexão). |
 | `sql/` | Scripts de criação/ajuste do banco (`SCRIPT.SQL`, `CRIAR_BANCO.SQL`). |
 | `docs/` | Materiais de apoio do desafio (PDF do enunciado e diagrama ER). |
@@ -50,9 +50,9 @@ O modelo de dados utilizado pelo aplicativo está ilustrado no diagrama abaixo:
 ## Fluxos rápidos de uso (UI)
 
 1. **Abastecer**: abra "Abastecimento" → escolha a bomba → informe a quantidade → confira totais → confirmar. Estoque é debitado, valores e impostos calculados e exibidos.
-2. **Repor tanque**: abra "Reposição" → escolha o tanque → informe quantidade e observação opcional → confirmar. O sistema bloqueia exceder a capacidade.
-3. **Manter bombas**: abra "Bombas" → Novo/Editar para definir descrição e tanque associado → Excluir disponível apenas para bombas sem movimentos.
-4. **Emitir relatório**: abra "Relatório" → selecione data inicial/final → Gerar. O Fortes abre o preview agrupando por dia/tanque.
+2. **Reposição de Tanque**: abra "Reposição" → escolha o tanque → informe quantidade e observação opcional → confirmar. O sistema bloqueia exceder a capacidade.
+3. **Bombas**: abra "Bombas" → Novo/Editar para definir descrição e tanque associado → Excluir disponível apenas para bombas sem movimentos.
+4. **Relatório**: abra "Relatório" → selecione data inicial/final → Gerar. O sistema abre o preview do relatório
 
 > O usuário logado ainda não é implementado; as telas utilizam `UsuarioId = 1` como placeholder para registrar movimentos.
 
