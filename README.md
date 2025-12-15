@@ -76,9 +76,9 @@ password=masterkey
 
 ## Como usar sem compilar
 
-1. Instale o Firebird 5 (x86)
-2. Abra `bin/`, ajuste `Tanq.ini` conforme necessário. O arquivo já vem pré-configurado para conectar no firebird instalado em localhost:3050 apontando para o banco TANQ.FDB no diretório do executável;
-3. Execute `Tanq.exe`. Se a conexão estiver correta, as telas são carregadas imediatamente.
+1. Instale o Firebird 5 (x86);
+2. Abra `bin/`, ajuste `Tanq.ini` conforme necessário;
+3. Execute `Tanq.exe`.
 
 ## Como compilar
 
@@ -93,7 +93,8 @@ password=masterkey
 
 ## Testes
 
-- A pasta `tests/` traz testes DUnit5. Ajuste o `dunit.ini` (em `bin/`) para apontar ao banco antes de executá-los.
+- A pasta `tests/` contém os testes em DUnit;
+- Por falta de tempo, foram feitos testes apenas para o serviço que gerencia os abastecimentos.
 
 ## Possíveis extensões
 
