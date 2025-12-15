@@ -98,10 +98,9 @@ password=masterkey
 
 ## Possíveis extensões
 
-- Autenticação/controle de usuários (substituir o `UsuarioId` fixo).
-- Cadastro/edição de combustíveis e tanques pela UI.
-- Auditoria avançada ou dashboards de consumo.
-- Exportação dos relatórios em PDF/CSV diretamente da aplicação.
+- Autenticação/controle de usuários;
+- Cadastro/edição de combustíveis e tanques pela UI;
+- Inclusão de outros relatórios.
 
 ## Contato
 
