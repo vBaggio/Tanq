@@ -209,6 +209,8 @@ begin
 
   if Result.CombustivelId = 0 then
     raise EAbastecimentoValidation.CreateFmt('Tanque associado à bomba %d não possui combustível configurado.', [ABombaId]);
+
+  Result.TanqueEstoqueAtual := FTanqueRepository.GetAvailableQuantity(Result.TanqueId);
 end;
 
 function TAbastecimentoService.Registrar(const ABombaId: Int64;

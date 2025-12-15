@@ -223,7 +223,7 @@ begin
   lblDetalhesCombustivel.Caption := Format('%s (%s)', [AResumo.BombaInfo.CombustivelDescricao, AResumo.BombaInfo.CombustivelUnidade]);
   lblDetalhesTanque.Caption := Format('%s - Capacidade: %.2f L', [AResumo.BombaInfo.TanqueDescricao, AResumo.BombaInfo.TanqueCapacidade]);
   lblDetalhesValorUnitario.Caption := Format('R$ %.2f', [AResumo.BombaInfo.CombustivelValor]);
-  lblDetalhesEstoque.Caption := FormatFloat('0.00 L', AResumo.BombaInfo.TanqueEstoqueAtual);
+  lblDetalhesEstoque.Caption := Format(' %.2f L', [AResumo.BombaInfo.TanqueEstoqueAtual]);
 end;
 
 procedure TfrmAbastecimento.UpdateTotais(const AResumo: TAbastecimentoResumo);

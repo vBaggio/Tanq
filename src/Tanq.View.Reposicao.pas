@@ -221,8 +221,8 @@ procedure TfrmReposicao.UpdateResumo(const AResumo: TReposicaoResumo);
 begin
   lblDetalhesTanque.Caption := AResumo.TanqueInfo.TanqueDescricao;
   lblDetalhesCombustivel.Caption := AResumo.TanqueInfo.CombustivelDescricao;
-  lblDetalhesCapacidade.Caption := Format('Capacidade: %.2f L', [AResumo.TanqueInfo.TanqueCapacidade]);
-  lblDetalhesEstoque.Caption := Format('Estoque atual: %.2f L', [AResumo.TanqueInfo.TanqueEstoqueAtual]);
+  lblDetalhesCapacidade.Caption := Format('%.2f L', [AResumo.TanqueInfo.TanqueCapacidade]);
+  lblDetalhesEstoque.Caption := Format('%.2f L', [AResumo.TanqueInfo.TanqueEstoqueAtual]);
 end;
 
 procedure TfrmReposicao.UpdateTotais(const AResumo: TReposicaoResumo);
